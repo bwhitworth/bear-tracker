@@ -5,8 +5,11 @@ import printBears from "./river.js";
 const addNewBear = (e) => {
   e.preventDefault();
   let newBear = {
+    id: `${bearData.bears.length +1}`,
     name: document.getElementById('input-bear-name').value,
-    imageUrl: document.getElementById('input-bear-image').value
+    imageUrl: document.getElementById('input-bear-image').value,
+    attempts: 0,
+    successes: 0
   };
   bearData.bears.push(newBear);
   document.getElementById('new-bear-form').reset();
