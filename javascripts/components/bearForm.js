@@ -1,15 +1,16 @@
 import util from "../helpers/utils.js";
 import bearData from "../helpers/data/bearData.js";
+import printBears from "./river.js";
 
 const addNewBear = (e) => {
   e.preventDefault();
   let newBear = {
     name: document.getElementById('input-bear-name').value,
-    imageURL: document.getElementById('input-bear-image').value
+    imageUrl: document.getElementById('input-bear-image').value
   };
   bearData.bears.push(newBear);
   document.getElementById('new-bear-form').reset();
-  console.log('bears array:', bearData.bears);
+  printBears.printAllBears();
 };
 
 const printBearForm = () => {
@@ -31,4 +32,3 @@ domString += '</form>'
 };
 
 export default { printBearForm };
-//change code to help gitHub merge error
