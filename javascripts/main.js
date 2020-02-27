@@ -1,3 +1,7 @@
+import bearForm from "./components/bearForm.js";
+
 const init = () => {
-  console.log('test init');
+  bearForm.printBearForm();
 };
+
+init();
