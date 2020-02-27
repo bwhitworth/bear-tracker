@@ -12,12 +12,20 @@ for(let i = 0; i < successButtons.length; i++){
 };
 };
 
-const fishingAttempt = () => {
-  console.log('attempted to catch a fish');
+const fishingAttempt = (e) => {
+  const bearId = e.target.closest('.card').id;
+  const bearPosition = bearData.bears.findIndex((x) => x.id === bearId);
+    bearData.bears[bearPosition].attempts += 1;
+    printAllBears();
+  console.log(bearId, 'attempted to catch a fish');
 };
 
-const fishingSuccess = () => {
-  console.log('caught a fish!');
+const fishingSuccess = (e) => {
+  const bearId = e.target.closest('.card').id;
+  const bearPosition = bearData.bears.findIndex((x) => x.id === bearId);
+    bearData.bears[bearPosition].successes += 1;
+    printAllBears();
+  console.log(bearId, 'Caught a fish!');
 };
 
 const printAllBears = () => {
