@@ -31,3 +31,4 @@ domString += '</form>'
 };
 
 export default { printBearForm };
+//change code to help gitHub merge error
