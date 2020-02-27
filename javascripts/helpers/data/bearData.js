@@ -12,3 +12,5 @@ const bears = [
     imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fferrebeekeeper.files.wordpress.com%2F2013%2F10%2Fbrown-bear-female-and-its-children-play-with-a-ball-in-kamchatka-peninsula-russia-801276.jpg&f=1&nofb=1"
    },
 ];
+
+export default { bears };
