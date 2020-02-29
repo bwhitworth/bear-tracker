@@ -11,6 +11,10 @@ const fishingAttempt = (e) => {
   const bearId = e.target.closest('.card').id;
   const bearPosition = bearData.bears.findIndex((x) => x.id === bearId);
     bearData.bears[bearPosition].attempts += 1;
+    bearData.bears[bearPosition].history.push({
+      event: 'attempt',
+      stamp: moment().format('MMMM Do YYYY, h:mm:ss')
+    });
     printAllBears();
 };
 
@@ -18,6 +22,10 @@ const fishingSuccess = (e) => {
   const bearId = e.target.closest('.card').id;
   const bearPosition = bearData.bears.findIndex((x) => x.id === bearId);
     bearData.bears[bearPosition].successes += 1;
+    bearData.bears[bearPosition].history.push({
+      event: 'catch',
+      stamp: moment().format('MMMM Do YYYY, h:mm:ss')
+    });
     printAllBears();
 };
 

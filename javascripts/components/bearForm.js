@@ -9,7 +9,8 @@ const addNewBear = (e) => {
     name: $( `#input-bear-name` ).val(),
     imageUrl: $( `#input-bear-image` ).val(),
     attempts: 0,
-    successes: 0
+    successes: 0,
+    history: []
   };
   bearData.bears.push(newBear);
   $( `#new-bear-form` ).trigger("reset");
