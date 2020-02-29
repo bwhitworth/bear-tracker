@@ -5,6 +5,7 @@ import river from "./components/river.js";
 const init = () => {
   bearForm.printBearForm();
   river.printAllBears();
+  river.addButtonEvents();
 };
 
 init();
