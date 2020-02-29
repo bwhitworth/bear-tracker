@@ -11,6 +11,10 @@ const fishingAttempt = (e) => {
   const bearId = e.target.closest('.card').id;
   const bearPosition = bearData.bears.findIndex((x) => x.id === bearId);
     bearData.bears[bearPosition].attempts += 1;
+    bearData.bears[bearPosition].history.push({
+      event: 'attempt',
+      stamp: moment().format('MM/DD/YY LTS')
+    });
     printAllBears();
 };
 
@@ -18,6 +22,11 @@ const fishingSuccess = (e) => {
   const bearId = e.target.closest('.card').id;
   const bearPosition = bearData.bears.findIndex((x) => x.id === bearId);
     bearData.bears[bearPosition].successes += 1;
+    bearData.bears[bearPosition].history.push({
+      event: 'catch',
+      stamp: moment().format('MM/DD/YY LTS')
+    });
+    console.log(bearData.bears[bearPosition].history);
     printAllBears();
 };
 
@@ -63,7 +72,7 @@ const viewSingleBear = (e) => {
   domString += '</div>',
   domString += '</div>',
   domString += '<div class="row">',
-  //domString += fishingTableBuilder(selectedBear.adventures),
+  domString += fishingTableBuilder(selectedBear.history),
   domString += '</div>',
   domString += '</div>',
 
@@ -72,4 +81,29 @@ const viewSingleBear = (e) => {
   $( "body #close-single-view" ).on( 'click', closeSingleView);
 };
 
-export default { printAllBears, viewSingleBear, addButtonEvents, closeSingleView };
+const fishingTableBuilder = (historyArray) => {
+  let domString = '';
+  if(historyArray.length > 0){
+    domString += '<table class="table">';
+    domString += '<thead class="thead-light">';
+    domString += '<tr>';
+    domString += '<th scope="col">Date</th>';
+    domString += '<th scope="col">Event</th>';
+    domString += '</tr>';
+    domString += '</thead>';
+    domString += '<tbody>';
+    for(let i = 0; i < historyArray.length; i++){
+      domString += '<tr>';
+      domString += `<td>${historyArray[i].stamp}</td>`;
+      domString += `<td>${historyArray[i].event}</td>`;
+      domString += '</tr>';
+    }
+    domString += '</tbody>';
+    domString += '</table>';
+  } else {
+    domString += `<h5>This bear has not tried to fish yet.</h5>`
+  }
+  return domString;
+}
+
+export default { printAllBears, viewSingleBear, addButtonEvents };
