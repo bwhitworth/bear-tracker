@@ -1,10 +1,11 @@
 import bearForm from "./components/bearForm.js";
-import printBears from "./components/river.js";
+import river from "./components/river.js";
 
 
 const init = () => {
   bearForm.printBearForm();
-  printBears.printAllBears();
+  river.printAllBears();
+  river.addButtonEvents();
 };
 
 init();
