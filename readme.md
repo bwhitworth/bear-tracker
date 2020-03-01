@@ -16,14 +16,16 @@ Design a web page that displays a grid of cards that show bears.  Scientists and
 * No errors or warnings in the final code
 
 #### Bonus Challenges Completed
-- [] Buttons on each bear card, that capture whether the bear attempted or successfully caught a fish
-- [] Capture and display timestamped list of all attempts and successful catches for that bear
-- [] Capture and display number of total fish caught
+- [x] Buttons on each bear card, that capture whether the bear attempted or successfully caught a fish
+- [x] Capture and display timestamped list of all attempts and successful catches for that bear
+- [x] Capture and display number of total fish caught
 - [] Fattest Bear Award: An Awards section which displays Gold, Silver, and Bronze for the bears who caught the most fish.  Display same award on multiple bears, in the case of a tie (e.g., two silvers)
 
 ### Screenshot:
-#### MVP version (no bonuses yet)
-![screenshot](screenshots/main-screenshot-1-MVP.png)
+#### Main View
+![screenshot](screenshots/screenshot-bonus-one-main.png)
+#### Single Bear Modal
+![screenshot](screenshots/screenshot-bonus-one-modal.png)
 
 ### Instructions to Run:
 1. If you do not have npm http-server installed, follow instuctions [here](https://www.npmjs.com/package/http-server) to install on your device
