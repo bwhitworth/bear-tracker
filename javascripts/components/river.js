@@ -1,5 +1,6 @@
 import util from "../helpers/utils.js";
 import bearData from "../helpers/data/bearData.js";
+import awards from "./awards.js";
 
 const addButtonEvents = () => {
   $( "body" ).on( 'click', '.attempt-button', fishingAttempt);
@@ -16,6 +17,8 @@ const fishingAttempt = (e) => {
       stamp: moment().format('MM/DD/YY LTS')
     });
     printAllBears();
+    awards.fattestBearBuilder();
+
 };
 
 const fishingSuccess = (e) => {
@@ -28,6 +31,7 @@ const fishingSuccess = (e) => {
     });
     console.log(bearData.bears[bearPosition].history);
     printAllBears();
+    awards.fattestBearBuilder();
 };
 
 const printAllBears = () => {
@@ -37,8 +41,8 @@ const printAllBears = () => {
     domString += `    <div id="${bearX.id}" class="card">`,
     domString += `      <img src="${bearX.imageUrl}" class="card-img-top" alt="bear photo">`,
     domString += '      <div class="card-body">',
-    //id="single-bear"
     domString += `        <h5 class="card-title">${bearX.name}</h5>`,
+
     domString += `        <button type="button" class="btn btn-primary view-button"><i class="fas fa-binoculars"></i></button>`,
     domString += '        <p class="card-text">Fishing Results:</p>',
     domString += '        <div class="row">',
@@ -53,7 +57,6 @@ const printAllBears = () => {
 };
 
 const closeSingleView = () => {
-  console.log('clicked close');  // WHY DOES THIS RUN MULTIPLE TIMES ON CLICK
   util.printToDom('single-view', '');
   $("#singleBearModal").modal('hide');
 };
@@ -105,5 +108,7 @@ const fishingTableBuilder = (historyArray) => {
   }
   return domString;
 }
+
+
 
 export default { printAllBears, viewSingleBear, addButtonEvents };

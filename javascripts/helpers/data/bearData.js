@@ -25,4 +25,4 @@ const bears = [
    },
 ];
 
-export default { bears };
+export default { bears,  };
