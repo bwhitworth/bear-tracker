@@ -14,26 +14,48 @@ const addNewBear = (e) => {
     history: []
   };
   bearData.bears.push(newBear);
-  $( `#new-bear-form` ).trigger("reset");
+  $( '#new-bear-form' ).trigger("reset");
+  $( '#collapseOne' ).removeClass('show');
   printBears.printAllBears();
   awards.fattestBearBuilder();
 };
 
 const printBearForm = () => {
-  let domString = ''
-  domString += '<form class="col-6" id="new-bear-form">',
-  domString += '  <div class="form-group">',
-  domString += '    <label for="inputName">Bear Name</label>',
-  domString += '    <input type="text" class="form-control" id="input-bear-name" aria-describedby="textHelp">',
-  domString += '  </div>',
-  domString += '  <div class="form-group">',
-  domString += '    <label for="inputName">Image URL</label>',
-  domString += '    <input type="text" class="form-control" id="input-bear-image" aria-describedby="textHelp">',
-  domString += '  </div>',
-  domString += '  <button type="submit" class="btn btn-dark" id="submit-bear-button">Submit</button>'
-  domString += '</form>'
+  let domString = '';
+  domString += `
+  <div class="col-6 offset-3 add-section">
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fas fa-plus-circle"></i> Add Bear
+            </button>
+          </h2>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <form class="row" id="new-bear-form" novalidate>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="bear-name">Name</label>
+                  <input type="text" class="form-control" id="input-bear-name" aria-describedby="nameHelp" required>
+                </div>
+                <div class="form-group">
+                  <label for="bear-image">Image</label>
+                  <input type="text" class="form-control" id="input-bear-image" aria-describedby="imageHelp" required>
+                </div>
+                <button type="submit" id="submit-bear-button" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
   util.printToDom('form-container', domString);
-  document.getElementById('submit-bear-button').addEventListener('click', addNewBear);
+  $( "body #submit-bear-button" ).on( 'click', addNewBear);
 };
 
 export default { printBearForm };
