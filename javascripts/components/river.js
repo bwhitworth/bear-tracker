@@ -29,7 +29,6 @@ const fishingSuccess = (e) => {
       event: 'catch',
       stamp: moment().format('MM/DD/YY LTS')
     });
-    console.log(bearData.bears[bearPosition].history);
     printAllBears();
     awards.fattestBearBuilder();
 };
