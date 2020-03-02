@@ -6,10 +6,10 @@ HTML5, CSS, Vanilla Javascript
 ### Description:
 NSS homework project, which introduces the use of Javascript modules.
 
-Design a web page that displays a grid of cards that show bears.  Scientists and park rangers may use this to add and track bears that feed in on salmon in a particular river.
+Design a web page that displays a grid of cards that show bears.  Scientists and park rangers may use this to add and track bears that feed on salmon in a particular river.
 
 #### Exercise Requirements
-* [Boostrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) for page styling
+* [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) for page styling
 * All actions on the page must be written within a function
 * Proper coding indentation/ readability
 * E6 modules
