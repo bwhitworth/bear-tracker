@@ -9,7 +9,7 @@ const init = () => {
   river.printAllBears();
   river.addButtonEvents();
   awards.fattestBearBuilder();
-  awards.sortBears();
+  awards.findAwards();
 };
 
 init();
