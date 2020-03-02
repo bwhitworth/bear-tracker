@@ -1,6 +1,7 @@
 import util from "../helpers/utils.js";
 import bearData from "../helpers/data/bearData.js";
 import printBears from "./river.js";
+import awards from "./awards.js";
 
 const addNewBear = (e) => {
   e.preventDefault();
@@ -15,6 +16,7 @@ const addNewBear = (e) => {
   bearData.bears.push(newBear);
   $( `#new-bear-form` ).trigger("reset");
   printBears.printAllBears();
+  awards.fattestBearBuilder();
 };
 
 const printBearForm = () => {
