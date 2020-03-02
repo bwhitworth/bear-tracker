@@ -23,9 +23,9 @@ Design a web page that displays a grid of cards that show bears.  Scientists and
 
 ### Screenshot:
 #### Main View
-![screenshot](screenshots/screenshot-bonus-two-main.png)
+![screenshot](screenshots/screenshot-bonus-main-collapsed.png)
 #### Single Bear Modal
-![screenshot](screenshots/screenshot-bonus-one-modal.png)
+![screenshot](screenshots/screenshot-main-modal.png)
 
 ### Instructions to Run:
 1. If you do not have npm http-server installed, follow instuctions [here](https://www.npmjs.com/package/http-server) to install on your device
