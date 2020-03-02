@@ -108,6 +108,4 @@ const fishingTableBuilder = (historyArray) => {
   return domString;
 }
 
-
-
 export default { printAllBears, viewSingleBear, addButtonEvents };
